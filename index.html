@@ -159,10 +159,17 @@
       }
       .hero {
         display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
+        grid-template-columns: 1fr;
         gap: 22px;
         align-items: start;
         margin: 28px 0 22px;
+      }
+      .recommend {
+        margin-top: 18px;
+        max-width: 760px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
       }
       .hero h1 {
         margin: 0 0 10px;
@@ -404,36 +411,44 @@
                 <p>在庫切れ時はECサイトへワンタップ（URL登録）で迷わない。</p>
               </div>
             </div>
-          </div>
 
-          <aside class="card">
-            <h2 style="margin: 0 0 8px; font-size: 18px">こんな方におすすめ</h2>
-            <div class="list" style="margin-top: 12px">
-              <div class="item">
-                <div class="badge">1</div>
-                <div>
-                  <div style="font-weight: 700">家族で在庫を共有したい</div>
-                  <div class="muted">誰かが買った/使い切ったがすぐわかる。</div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="badge">2</div>
-                <div>
-                  <div style="font-weight: 700">
-                    買い忘れ・重複購入を減らしたい
+            <aside class="card recommend">
+              <h2 style="margin: 0 0 8px; font-size: 18px">
+                こんな方におすすめ
+              </h2>
+              <div class="list" style="margin-top: 12px">
+                <div class="item">
+                  <div class="badge">1</div>
+                  <div>
+                    <div style="font-weight: 700">家族で在庫を共有したい</div>
+                    <div class="muted">
+                      誰かが買った/使い切ったがすぐわかる。
+                    </div>
                   </div>
-                  <div class="muted">買い物前にサッと在庫確認。</div>
+                </div>
+                <div class="item">
+                  <div class="badge">2</div>
+                  <div>
+                    <div style="font-weight: 700">
+                      買い忘れ・重複購入を減らしたい
+                    </div>
+                    <div class="muted">買い物前にサッと在庫確認。</div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="badge">3</div>
+                  <div>
+                    <div style="font-weight: 700">
+                      日用品の補充をラクにしたい
+                    </div>
+                    <div class="muted">
+                      洗剤、紙類、シャンプーなどに最適。
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="badge">3</div>
-                <div>
-                  <div style="font-weight: 700">日用品の補充をラクにしたい</div>
-                  <div class="muted">洗剤、紙類、シャンプーなどに最適。</div>
-                </div>
-              </div>
-            </div>
-          </aside>
+            </aside>
+          </div>
         </section>
 
         <section id="screenshots" class="section">
