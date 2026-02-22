@@ -71,13 +71,16 @@
 
     <style>
       :root {
-        --bg: #0b0f17;
-        --card: rgba(255, 255, 255, 0.06);
-        --text: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.72);
-        --border: rgba(255, 255, 255, 0.12);
-        --accent: #5bd1ff;
-        --accent2: #7c5cff;
+        /* warm orange-gold palette (based on screenshots) */
+        --bg: #fbf4e6; /* cream */
+        --card: rgba(255, 255, 255, 0.72);
+        --surface: rgba(255, 255, 255, 0.58);
+        --surface2: rgba(255, 255, 255, 0.46);
+        --text: rgba(45, 32, 20, 0.92);
+        --muted: rgba(73, 54, 37, 0.72);
+        --border: rgba(120, 86, 56, 0.18);
+        --accent: #ff7a1a; /* orange */
+        --accent2: #ffc86b; /* soft gold */
       }
       * {
         box-sizing: border-box;
@@ -97,12 +100,17 @@
         background:
           radial-gradient(
             1200px 800px at 20% 10%,
-            rgba(124, 92, 255, 0.22),
+            rgba(255, 200, 107, 0.22),
             transparent
           ),
           radial-gradient(
-            1000px 700px at 80% 0%,
-            rgba(91, 209, 255, 0.18),
+            1100px 780px at 80% 0%,
+            rgba(255, 122, 26, 0.10),
+            transparent
+          ),
+          radial-gradient(
+            900px 700px at 50% 110%,
+            rgba(120, 86, 56, 0.08),
             transparent
           ),
           var(--bg);
@@ -143,10 +151,10 @@
         object-fit: cover;
         background: linear-gradient(
           135deg,
-          rgba(91, 209, 255, 0.95),
-          rgba(124, 92, 255, 0.95)
+          rgba(255, 122, 26, 0.95),
+          rgba(255, 183, 74, 0.95)
         );
-        box-shadow: 0 16px 45px rgba(91, 209, 255, 0.15);
+        box-shadow: 0 16px 45px rgba(255, 122, 26, 0.16);
       }
       .pill {
         display: inline-flex;
@@ -154,7 +162,7 @@
         gap: 8px;
         padding: 10px 14px;
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.04);
+        background: var(--surface);
         border-radius: 999px;
         color: var(--muted);
         font-size: 14px;
@@ -168,10 +176,10 @@
       }
       .recommend {
         margin-top: 18px;
-        max-width: 760px;
         width: 100%;
-        margin-left: auto;
-        margin-right: auto;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
       }
       .hero h1 {
         margin: 0 0 10px;
@@ -198,17 +206,18 @@
         padding: 12px 16px;
         border-radius: 14px;
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.05);
+        background: var(--surface);
         font-weight: 700;
       }
       .btnPrimary {
         border: 0;
+        color: rgba(255, 255, 255, 0.96);
         background: linear-gradient(
           135deg,
-          rgba(91, 209, 255, 0.95),
-          rgba(124, 92, 255, 0.95)
+          rgba(255, 122, 26, 0.95),
+          rgba(255, 183, 74, 0.95)
         );
-        box-shadow: 0 18px 55px rgba(124, 92, 255, 0.2);
+        box-shadow: 0 18px 55px rgba(255, 122, 26, 0.22);
       }
       .card {
         border: 1px solid var(--border);
@@ -250,18 +259,18 @@
         padding: 14px;
         border-radius: 16px;
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.03);
+        background: var(--surface2);
       }
       .badge {
         flex: none;
         width: 28px;
         height: 28px;
         border-radius: 10px;
-        background: rgba(91, 209, 255, 0.14);
-        border: 1px solid rgba(91, 209, 255, 0.25);
+        background: rgba(255, 122, 26, 0.14);
+        border: 1px solid rgba(255, 122, 26, 0.28);
         display: grid;
         place-items: center;
-        color: rgba(91, 209, 255, 0.95);
+        color: rgba(255, 183, 74, 0.98);
         font-weight: 800;
       }
       .muted {
@@ -297,7 +306,7 @@
         height: 10px;
       }
       .shotGrid::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.14);
+        background: rgba(120, 86, 56, 0.22);
         border-radius: 999px;
         border: 2px solid transparent;
         background-clip: padding-box;
@@ -306,14 +315,14 @@
         flex: 0 0 240px;
         scroll-snap-align: start;
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.03);
+        background: var(--surface2);
         border-radius: 18px;
         padding: 10px;
         text-decoration: none;
       }
       .shotItem:hover {
         text-decoration: none;
-        border-color: rgba(255, 255, 255, 0.22);
+        border-color: rgba(120, 86, 56, 0.28);
       }
       .shotImg {
         width: 100%;
