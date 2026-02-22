@@ -5,32 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="チラストックは、家庭の在庫管理を簡単にできるストック管理アプリです。日用品・食品・消耗品の残量を見える化して、家族や同居人とリアルタイム共有。買い忘れ・重複購入を減らして、日々の買い物をもっと楽にします。"
+      content="チラストックは、家庭の在庫管理を簡単にできるストック管理アプリです。日用品・食品・消耗品の残量を見える化して、家族や同居人と共有。買い忘れ・重複購入を減らして、日々の買い物をもっと楽にします。"
     />
     <meta name="robots" content="index,follow" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
-    <meta property="og:title" content="チラストック｜家族で共有する在庫管理アプリ" />
+    <meta
+      property="og:title"
+      content="チラストック｜家族で共有する在庫管理アプリ"
+    />
     <meta
       property="og:description"
-      content="日用品・食品の在庫を見える化して、家族で共有。買い忘れ・重複購入を防ぐ家庭向けストック管理アプリ。"
+      content="日用品・食品のストックを見える化して家族で共有。買い忘れ・重複購入を減らす、シンプルな在庫管理アプリ。"
     />
-    <meta property="og:url" content="https://miryowasuke.github.io/chirastock-mobile/" />
+    <meta
+      property="og:url"
+      content="https://miryowasuke.github.io/chirastock-mobile/"
+    />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="チラストック｜家族で共有する在庫管理アプリ" />
+    <meta
+      name="twitter:title"
+      content="チラストック｜家族で共有する在庫管理アプリ"
+    />
     <meta
       name="twitter:description"
-      content="日用品・食品の在庫を見える化して、家族で共有。買い忘れ・重複購入を防ぐ家庭向けストック管理アプリ。"
+      content="日用品・食品のストックを見える化して家族で共有。買い忘れ・重複購入を減らす、シンプルな在庫管理アプリ。"
     />
 
-    <link rel="canonical" href="https://miryowasuke.github.io/chirastock-mobile/" />
+    <link
+      rel="canonical"
+      href="https://miryowasuke.github.io/chirastock-mobile/"
+    />
     <link rel="sitemap" type="application/xml" href="./sitemap.xml" />
 
     <title>チラストック｜家族で共有する在庫管理アプリ</title>
 
-    <!-- SoftwareApplication structured data (JSON-LD) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -40,21 +51,14 @@
         "applicationCategory": "LifestyleApplication",
         "operatingSystem": "iOS",
         "inLanguage": "ja-JP",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "JPY"
-        },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
         "url": "https://miryowasuke.github.io/chirastock-mobile/",
         "downloadUrl": "https://apps.apple.com/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF/id6756490212",
-        "publisher": {
-          "@type": "Person",
-          "name": "ryosuke miwa"
-        },
-        "description": "チラストックは、家庭の在庫管理を簡単にできるストック管理アプリです。日用品・食品・消耗品の残量を見える化して、家族や同居人とリアルタイム共有。買い忘れ・重複購入を減らして、日々の買い物をもっと楽にします。",
+        "publisher": { "@type": "Person", "name": "ryosuke miwa" },
+        "description": "チラストックは、家庭の在庫管理を簡単にできるストック管理アプリです。日用品・食品・消耗品の残量を見える化して、家族や同居人と共有。買い忘れ・重複購入を減らして、日々の買い物をもっと楽にします。",
         "featureList": [
           "3段階の色分けで直感的に在庫管理（在庫あり/残り少/在庫なし）",
-          "家族・同居人とリアルタイム共有",
+          "家族・同居人と共有",
           "グループで場所/用途別に管理",
           "ECサイト連携（在庫切れ時に購入ページへ）",
           "商品画像・メモの登録",
@@ -80,10 +84,27 @@
       }
       body {
         margin: 0;
-        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-        background: radial-gradient(1200px 800px at 20% 10%, rgba(124, 92, 255, 0.22), transparent),
-          radial-gradient(1000px 700px at 80% 0%, rgba(91, 209, 255, 0.18), transparent),
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          "Apple Color Emoji",
+          "Segoe UI Emoji";
+        background:
+          radial-gradient(
+            1200px 800px at 20% 10%,
+            rgba(124, 92, 255, 0.22),
+            transparent
+          ),
+          radial-gradient(
+            1000px 700px at 80% 0%,
+            rgba(91, 209, 255, 0.18),
+            transparent
+          ),
           var(--bg);
         color: var(--text);
         line-height: 1.6;
@@ -118,7 +139,11 @@
         width: 40px;
         height: 40px;
         border-radius: 12px;
-        background: linear-gradient(135deg, rgba(91, 209, 255, 0.95), rgba(124, 92, 255, 0.95));
+        background: linear-gradient(
+          135deg,
+          rgba(91, 209, 255, 0.95),
+          rgba(124, 92, 255, 0.95)
+        );
         box-shadow: 0 16px 45px rgba(91, 209, 255, 0.15);
       }
       .pill {
@@ -169,7 +194,11 @@
       }
       .btnPrimary {
         border: 0;
-        background: linear-gradient(135deg, rgba(91, 209, 255, 0.95), rgba(124, 92, 255, 0.95));
+        background: linear-gradient(
+          135deg,
+          rgba(91, 209, 255, 0.95),
+          rgba(124, 92, 255, 0.95)
+        );
         box-shadow: 0 18px 55px rgba(124, 92, 255, 0.2);
       }
       .card {
@@ -306,6 +335,11 @@
       }
 
       @media (min-width: 920px) {
+        /* 横長（改行させない） */
+        .hero h1 {
+          white-space: nowrap;
+          font-size: 40px;
+        }
         .shotGrid {
           display: grid;
           grid-template-columns: repeat(5, 1fr);
@@ -339,10 +373,11 @@
       <main>
         <section class="hero">
           <div>
-            <h1>「まだあったっけ？」をなくす。<br />家族で共有する在庫管理。</h1>
+            <h1>「まだあったっけ？」をなくす。家族で共有する在庫管理。</h1>
             <p>
-              チラストックは、日用品・食品・消耗品などのストックを見える化して、家族や同居人とリアルタイム共有できる在庫管理アプリです。
-              買い忘れや重複購入を減らし、日々の買い物をもっとスムーズにします。
+              洗剤やトイレットペーパー、食品のストックなど、家の中って意外と「把握しづらい」もの。
+              チラストックなら、3段階の色分けでサッと確認できて、家族や同居人とも共有できます。
+              買い忘れや重複購入が減るだけで、買い物がちょっとラクになります。
             </p>
             <div class="ctaRow">
               <a
@@ -354,14 +389,15 @@
               <a class="btn" href="#features">機能を見る</a>
               <a class="btn" href="#faq">FAQ</a>
             </div>
+
             <div class="cards" aria-label="Highlights">
               <div class="card">
                 <h3>3段階で直感管理</h3>
                 <p>在庫あり / 残り少 / 在庫なし を色分けでわかりやすく。</p>
               </div>
               <div class="card">
-                <h3>リアルタイム共有</h3>
-                <p>家族・同居人と在庫情報を共有して、買い物のムダを減らす。</p>
+                <h3>共有でズレが減る</h3>
+                <p>「買った？」「まだある？」のやり取りが減ってスッキリ。</p>
               </div>
               <div class="card">
                 <h3>補充がスムーズ</h3>
@@ -383,7 +419,9 @@
               <div class="item">
                 <div class="badge">2</div>
                 <div>
-                  <div style="font-weight: 700">買い忘れ・重複購入を減らしたい</div>
+                  <div style="font-weight: 700">
+                    買い忘れ・重複購入を減らしたい
+                  </div>
                   <div class="muted">買い物前にサッと在庫確認。</div>
                 </div>
               </div>
@@ -401,32 +439,84 @@
         <section id="screenshots" class="section">
           <h2>スクリーンショット</h2>
           <p class="muted" style="margin: 0 0 12px">
-            操作感が分かるように主要画面をまとめました（タップで拡大表示できます）。
+            主要画面をまとめました（タップで拡大表示できます）。
           </p>
 
           <div class="shotGrid" aria-label="Screenshots">
-            <a class="shotItem" href="./assets/screenshots/01.png" target="_blank" rel="noopener">
-              <img class="shotImg" src="./assets/screenshots/01.png" alt="ECサイトへワンタップで購入" loading="lazy" />
-              <div class="shotCap">探さない、すぐ買える（ECサイトへワンタップ）</div>
+            <a
+              class="shotItem"
+              href="./assets/screenshots/01.png"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                class="shotImg"
+                src="./assets/screenshots/01.png"
+                alt="ECサイトへワンタップで購入"
+                loading="lazy"
+              />
+              <div class="shotCap">
+                探さない、すぐ買える（ECサイトへワンタップ）
+              </div>
             </a>
 
-            <a class="shotItem" href="./assets/screenshots/02.png" target="_blank" rel="noopener">
-              <img class="shotImg" src="./assets/screenshots/02.png" alt="商品を直感で追加" loading="lazy" />
+            <a
+              class="shotItem"
+              href="./assets/screenshots/02.png"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                class="shotImg"
+                src="./assets/screenshots/02.png"
+                alt="商品を直感で追加"
+                loading="lazy"
+              />
               <div class="shotCap">迷う前に、直感で追加</div>
             </a>
 
-            <a class="shotItem" href="./assets/screenshots/03.png" target="_blank" rel="noopener">
-              <img class="shotImg" src="./assets/screenshots/03.png" alt="チラ見で在庫を色分け管理" loading="lazy" />
+            <a
+              class="shotItem"
+              href="./assets/screenshots/03.png"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                class="shotImg"
+                src="./assets/screenshots/03.png"
+                alt="チラ見で在庫を色分け管理"
+                loading="lazy"
+              />
               <div class="shotCap">チラ見して「あり / 少ない / なし」</div>
             </a>
 
-            <a class="shotItem" href="./assets/screenshots/04.png" target="_blank" rel="noopener">
-              <img class="shotImg" src="./assets/screenshots/04.png" alt="家族で在庫を共有するグループ機能" loading="lazy" />
+            <a
+              class="shotItem"
+              href="./assets/screenshots/04.png"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                class="shotImg"
+                src="./assets/screenshots/04.png"
+                alt="家族で在庫を共有するグループ機能"
+                loading="lazy"
+              />
               <div class="shotCap">在庫は家族で共有（グループ機能）</div>
             </a>
 
-            <a class="shotItem" href="./assets/screenshots/05.png" target="_blank" rel="noopener">
-              <img class="shotImg" src="./assets/screenshots/05.png" alt="数字を使わない感覚的な在庫管理" loading="lazy" />
+            <a
+              class="shotItem"
+              href="./assets/screenshots/05.png"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                class="shotImg"
+                src="./assets/screenshots/05.png"
+                alt="数字を使わない感覚的な在庫管理"
+                loading="lazy"
+              />
               <div class="shotCap">数字を使わない、感覚でわかる在庫管理</div>
             </a>
           </div>
@@ -489,19 +579,31 @@
             <div class="item">
               <div class="badge">Q</div>
               <div>
-                <div style="font-weight: 700">データはどこに保存されますか？</div>
+                <div style="font-weight: 700">
+                  データはどこに保存されますか？
+                </div>
                 <div class="muted">
-                  Firebase（Google Cloud）のサーバーに保存されます。認証済みユーザーのみアクセスできるよう制御しています。
+                  Firebase（Google
+                  Cloud）のサーバーに保存されます。認証済みユーザーのみアクセスできるよう制御しています。
                 </div>
               </div>
             </div>
             <div class="item">
               <div class="badge">Q</div>
               <div>
-                <div style="font-weight: 700">プライバシーポリシー/利用規約は？</div>
+                <div style="font-weight: 700">
+                  プライバシーポリシー/利用規約は？
+                </div>
                 <div class="muted">
-                  <a href="https://miryowasuke.github.io/chirastock-privacy/privacy">プライバシーポリシー</a> /
-                  <a href="https://miryowasuke.github.io/chirastock-privacy/terms-of-service">利用規約</a>
+                  <a
+                    href="https://miryowasuke.github.io/chirastock-privacy/privacy"
+                    >プライバシーポリシー</a
+                  >
+                  /
+                  <a
+                    href="https://miryowasuke.github.io/chirastock-privacy/terms-of-service"
+                    >利用規約</a
+                  >
                 </div>
               </div>
             </div>
@@ -520,7 +622,9 @@
                 href="https://apps.apple.com/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF/id6756490212"
                 >App Storeで見る</a
               >
-              <a class="btn" href="mailto:chirastock.miwa@gmail.com">問い合わせ</a>
+              <a class="btn" href="mailto:chirastock.miwa@gmail.com"
+                >問い合わせ</a
+              >
             </div>
           </div>
         </section>
@@ -529,9 +633,17 @@
       <footer class="footer">
         <div>© 2026 チラストック</div>
         <div style="display: flex; gap: 14px; flex-wrap: wrap">
-          <a href="https://miryowasuke.github.io/chirastock-privacy/privacy">プライバシーポリシー</a>
-          <a href="https://miryowasuke.github.io/chirastock-privacy/terms-of-service">利用規約</a>
-          <a href="https://apps.apple.com/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF/id6756490212">App Store</a>
+          <a href="https://miryowasuke.github.io/chirastock-privacy/privacy"
+            >プライバシーポリシー</a
+          >
+          <a
+            href="https://miryowasuke.github.io/chirastock-privacy/terms-of-service"
+            >利用規約</a
+          >
+          <a
+            href="https://apps.apple.com/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF/id6756490212"
+            >App Store</a
+          >
         </div>
       </footer>
     </div>
