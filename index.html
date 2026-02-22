@@ -240,6 +240,70 @@
         color: var(--muted);
         font-size: 14px;
       }
+      .panel {
+        border: 1px solid var(--border);
+        background: linear-gradient(
+          135deg,
+          rgba(255, 200, 107, 0.16),
+          rgba(255, 255, 255, 0.52)
+        );
+        border-radius: 22px;
+        padding: 18px;
+      }
+      .panelHeader {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+      .panelHeader h2 {
+        margin: 0;
+        font-size: 22px;
+        letter-spacing: -0.2px;
+      }
+      .panelHeader p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .illusGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .illusCard {
+        border: 1px solid var(--border);
+        background: var(--card);
+        border-radius: 18px;
+        padding: 14px;
+      }
+      .illusImgWrap {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 16px;
+        padding: 10px;
+        display: grid;
+        place-items: center;
+      }
+      .illusImg {
+        width: 100%;
+        height: auto;
+        max-width: 260px;
+        display: block;
+      }
+      .illusTitle {
+        margin: 12px 0 4px;
+        font-weight: 800;
+        letter-spacing: -0.1px;
+      }
+      .illusText {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.5;
+      }
       .section {
         margin-top: 34px;
       }
@@ -342,6 +406,9 @@
           grid-template-columns: 1fr;
         }
         .cards {
+          grid-template-columns: 1fr;
+        }
+        .illusGrid {
           grid-template-columns: 1fr;
         }
         .grid2 {
@@ -466,6 +533,61 @@
                 </div>
               </div>
             </aside>
+          </div>
+        </section>
+
+        <section class="section" aria-label="使い方イメージ">
+          <div class="panel">
+            <div class="panelHeader">
+              <h2>使い方イメージ（3ステップ）</h2>
+              <p>確認 → 共有 → 買い足しをスムーズに。</p>
+            </div>
+
+            <div class="illusGrid" aria-label="Onboarding illustrations">
+              <div class="illusCard">
+                <div class="illusImgWrap">
+                  <img
+                    class="illusImg"
+                    src="./assets/screenshots/1_onboarding.png"
+                    alt="在庫を確認・更新するイメージ"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="illusTitle">チラ見で在庫確認</div>
+                <p class="illusText">家のストックを、感覚でサッと更新。</p>
+              </div>
+
+              <div class="illusCard">
+                <div class="illusImgWrap">
+                  <img
+                    class="illusImg"
+                    src="./assets/screenshots/2_onboarding.png"
+                    alt="家族で在庫を共有するイメージ"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="illusTitle">家族で共有</div>
+                <p class="illusText">
+                  「買った？」「まだある？」のやり取りを減らす。
+                </p>
+              </div>
+
+              <div class="illusCard">
+                <div class="illusImgWrap">
+                  <img
+                    class="illusImg"
+                    src="./assets/screenshots/3_onboarding.png"
+                    alt="在庫切れ時に購入するイメージ"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="illusTitle">足りなければすぐ購入</div>
+                <p class="illusText">URL登録で、在庫切れの買い足しも迷わない。</p>
+              </div>
+            </div>
           </div>
         </section>
 
