@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="チラストックは、家庭の在庫管理を簡単にできるストック管理アプリです。日用品・食品・消耗品の残量を見える化して、家族や同居人とリアルタイム共有。買い忘れ・重複購入を減らして、日々の買い物をもっと楽にします。"
+    />
+    <meta name="robots" content="index,follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:title" content="チラストック｜家族で共有する在庫管理アプリ" />
+    <meta
+      property="og:description"
+      content="日用品・食品の在庫を見える化して、家族で共有。買い忘れ・重複購入を防ぐ家庭向けストック管理アプリ。"
+    />
+    <meta property="og:url" content="https://miryowasuke.github.io/chirastock-mobile/" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="チラストック｜家族で共有する在庫管理アプリ" />
+    <meta
+      name="twitter:description"
+      content="日用品・食品の在庫を見える化して、家族で共有。買い忘れ・重複購入を防ぐ家庭向けストック管理アプリ。"
+    />
+
+    <link rel="canonical" href="https://miryowasuke.github.io/chirastock-mobile/" />
+    <link rel="sitemap" type="application/xml" href="./sitemap.xml" />
+
+    <title>チラストック｜家族で共有する在庫管理アプリ</title>
+
+    <!-- SoftwareApplication structured data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "チラストック",
+        "alternateName": ["Chirastock", "チラストック 在庫管理"],
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "iOS",
+        "inLanguage": "ja-JP",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "JPY"
+        },
+        "url": "https://miryowasuke.github.io/chirastock-mobile/",
+        "downloadUrl": "https://apps.apple.com/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF/id6756490212",
+        "publisher": {
+          "@type": "Person",
+          "name": "ryosuke miwa"
+        },
+        "description": "チラストックは、家庭の在庫管理を簡単にできるストック管理アプリです。日用品・食品・消耗品の残量を見える化して、家族や同居人とリアルタイム共有。買い忘れ・重複購入を減らして、日々の買い物をもっと楽にします。",
+        "featureList": [
+          "3段階の色分けで直感的に在庫管理（在庫あり/残り少/在庫なし）",
+          "家族・同居人とリアルタイム共有",
+          "グループで場所/用途別に管理",
+          "ECサイト連携（在庫切れ時に購入ページへ）",
+          "商品画像・メモの登録",
+          "在庫履歴の記録"
+        ],
+        "privacyPolicy": "https://miryowasuke.github.io/chirastock-privacy/privacy",
+        "termsOfService": "https://miryowasuke.github.io/chirastock-privacy/terms-of-service"
+      }
+    </script>
+
+    <style>
+      :root {
+        --bg: #0b0f17;
+        --card: rgba(255, 255, 255, 0.06);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.72);
+        --border: rgba(255, 255, 255, 0.12);
+        --accent: #5bd1ff;
+        --accent2: #7c5cff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        background: radial-gradient(1200px 800px at 20% 10%, rgba(124, 92, 255, 0.22), transparent),
+          radial-gradient(1000px 700px at 80% 0%, rgba(91, 209, 255, 0.18), transparent),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .wrap {
+        max-width: 1060px;
+        margin: 0 auto;
+        padding: 56px 20px 72px;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+      .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(91, 209, 255, 0.95), rgba(124, 92, 255, 0.95));
+        box-shadow: 0 16px 45px rgba(91, 209, 255, 0.15);
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 22px;
+        align-items: start;
+        margin: 28px 0 22px;
+      }
+      .hero h1 {
+        margin: 0 0 10px;
+        font-size: 44px;
+        line-height: 1.14;
+        letter-spacing: -0.4px;
+      }
+      .hero p {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 17px;
+      }
+      .ctaRow {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 16px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.05);
+        font-weight: 700;
+      }
+      .btnPrimary {
+        border: 0;
+        background: linear-gradient(135deg, rgba(91, 209, 255, 0.95), rgba(124, 92, 255, 0.95));
+        box-shadow: 0 18px 55px rgba(124, 92, 255, 0.2);
+      }
+      .card {
+        border: 1px solid var(--border);
+        background: var(--card);
+        border-radius: 18px;
+        padding: 16px;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 18px;
+      }
+      .cards h3 {
+        margin: 0 0 6px;
+        font-size: 16px;
+      }
+      .cards p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .section {
+        margin-top: 34px;
+      }
+      .section h2 {
+        margin: 0 0 12px;
+        font-size: 22px;
+        letter-spacing: -0.2px;
+      }
+      .list {
+        display: grid;
+        gap: 10px;
+      }
+      .item {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        padding: 14px;
+        border-radius: 16px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .badge {
+        flex: none;
+        width: 28px;
+        height: 28px;
+        border-radius: 10px;
+        background: rgba(91, 209, 255, 0.14);
+        border: 1px solid rgba(91, 209, 255, 0.25);
+        display: grid;
+        place-items: center;
+        color: rgba(91, 209, 255, 0.95);
+        font-weight: 800;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .grid2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .footer {
+        margin-top: 46px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        justify-content: space-between;
+      }
+      @media (max-width: 920px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        .grid2 {
+          grid-template-columns: 1fr;
+        }
+        .hero h1 {
+          font-size: 36px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="nav">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <div>チラストック</div>
+            <div class="muted" style="font-size: 13px">
+              家族で共有する在庫管理アプリ
+            </div>
+          </div>
+        </div>
+        <div class="pill">
+          <span aria-hidden="true">●</span>
+          <span>在庫管理 / ストック管理 / 買い物 / 共有</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div>
+            <h1>「まだあったっけ？」をなくす。<br />家族で共有する在庫管理。</h1>
+            <p>
+              チラストックは、日用品・食品・消耗品などのストックを見える化して、家族や同居人とリアルタイム共有できる在庫管理アプリです。
+              買い忘れや重複購入を減らし、日々の買い物をもっとスムーズにします。
+            </p>
+            <div class="ctaRow">
+              <a
+                class="btn btnPrimary"
+                href="https://apps.apple.com/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF/id6756490212"
+                >App Storeで見る</a
+              >
+              <a class="btn" href="#features">機能を見る</a>
+              <a class="btn" href="#faq">FAQ</a>
+            </div>
+            <div class="cards" aria-label="Highlights">
+              <div class="card">
+                <h3>3段階で直感管理</h3>
+                <p>在庫あり / 残り少 / 在庫なし を色分けでわかりやすく。</p>
+              </div>
+              <div class="card">
+                <h3>リアルタイム共有</h3>
+                <p>家族・同居人と在庫情報を共有して、買い物のムダを減らす。</p>
+              </div>
+              <div class="card">
+                <h3>補充がスムーズ</h3>
+                <p>在庫切れ時はECサイトへワンタップ（URL登録）で迷わない。</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="card">
+            <h2 style="margin: 0 0 8px; font-size: 18px">こんな方におすすめ</h2>
+            <div class="list" style="margin-top: 12px">
+              <div class="item">
+                <div class="badge">1</div>
+                <div>
+                  <div style="font-weight: 700">家族で在庫を共有したい</div>
+                  <div class="muted">誰かが買った/使い切ったがすぐわかる。</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="badge">2</div>
+                <div>
+                  <div style="font-weight: 700">買い忘れ・重複購入を減らしたい</div>
+                  <div class="muted">買い物前にサッと在庫確認。</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="badge">3</div>
+                <div>
+                  <div style="font-weight: 700">日用品の補充をラクにしたい</div>
+                  <div class="muted">洗剤、紙類、シャンプーなどに最適。</div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section id="features" class="section">
+          <h2>機能（在庫管理アプリとしてできること）</h2>
+          <div class="grid2">
+            <div class="item">
+              <div class="badge">✓</div>
+              <div>
+                <div style="font-weight: 700">3段階の在庫管理</div>
+                <div class="muted">
+                  在庫状態を直感的に切り替え。家族全員が同じルールで運用できます。
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="badge">✓</div>
+              <div>
+                <div style="font-weight: 700">グループ管理</div>
+                <div class="muted">
+                  キッチン/洗面所/リビングなど、場所や用途別に在庫を分けて管理。
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="badge">✓</div>
+              <div>
+                <div style="font-weight: 700">ECサイト連携</div>
+                <div class="muted">
+                  商品にURLを登録しておけば、在庫切れ時に購入ページへ。
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="badge">✓</div>
+              <div>
+                <div style="font-weight: 700">商品画像・メモ</div>
+                <div class="muted">
+                  写真で一目で判別。補足メモも残せます（サイズ/型番など）。
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" class="section">
+          <h2>FAQ</h2>
+          <div class="list">
+            <div class="item">
+              <div class="badge">Q</div>
+              <div>
+                <div style="font-weight: 700">料金はかかりますか？</div>
+                <div class="muted">
+                  基本は無料で利用できます。必要に応じてアプリ内課金（Premiumプラン）があります。
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="badge">Q</div>
+              <div>
+                <div style="font-weight: 700">データはどこに保存されますか？</div>
+                <div class="muted">
+                  Firebase（Google Cloud）のサーバーに保存されます。認証済みユーザーのみアクセスできるよう制御しています。
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="badge">Q</div>
+              <div>
+                <div style="font-weight: 700">プライバシーポリシー/利用規約は？</div>
+                <div class="muted">
+                  <a href="https://miryowasuke.github.io/chirastock-privacy/privacy">プライバシーポリシー</a> /
+                  <a href="https://miryowasuke.github.io/chirastock-privacy/terms-of-service">利用規約</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="card">
+            <h2 style="margin: 0 0 10px">ダウンロード</h2>
+            <p class="muted" style="margin: 0 0 14px">
+              iPhone/iPad向けに公開中です。Androidは準備中です。
+            </p>
+            <div class="ctaRow">
+              <a
+                class="btn btnPrimary"
+                href="https://apps.apple.com/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF/id6756490212"
+                >App Storeで見る</a
+              >
+              <a class="btn" href="mailto:chirastock.miwa@gmail.com">問い合わせ</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>© 2026 チラストック</div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap">
+          <a href="https://miryowasuke.github.io/chirastock-privacy/privacy">プライバシーポリシー</a>
+          <a href="https://miryowasuke.github.io/chirastock-privacy/terms-of-service">利用規約</a>
+          <a href="https://apps.apple.com/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF/id6756490212">App Store</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
