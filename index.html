@@ -245,6 +245,51 @@
         gap: 14px;
         justify-content: space-between;
       }
+
+      /* screenshots */
+      .shotGrid {
+        display: flex;
+        gap: 14px;
+        overflow-x: auto;
+        padding: 6px 2px 10px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .shotGrid::-webkit-scrollbar {
+        height: 10px;
+      }
+      .shotGrid::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.14);
+        border-radius: 999px;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+      }
+      .shotItem {
+        flex: 0 0 240px;
+        scroll-snap-align: start;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 18px;
+        padding: 10px;
+        text-decoration: none;
+      }
+      .shotItem:hover {
+        text-decoration: none;
+        border-color: rgba(255, 255, 255, 0.22);
+      }
+      .shotImg {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 14px;
+      }
+      .shotCap {
+        margin: 10px 4px 2px;
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
       @media (max-width: 920px) {
         .hero {
           grid-template-columns: 1fr;
@@ -257,6 +302,18 @@
         }
         .hero h1 {
           font-size: 36px;
+        }
+      }
+
+      @media (min-width: 920px) {
+        .shotGrid {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          overflow: visible;
+          padding: 0;
+        }
+        .shotItem {
+          flex: initial;
         }
       }
     </style>
@@ -293,6 +350,7 @@
                 href="https://apps.apple.com/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF/id6756490212"
                 >App Storeで見る</a
               >
+              <a class="btn" href="#screenshots">スクショを見る</a>
               <a class="btn" href="#features">機能を見る</a>
               <a class="btn" href="#faq">FAQ</a>
             </div>
@@ -338,6 +396,40 @@
               </div>
             </div>
           </aside>
+        </section>
+
+        <section id="screenshots" class="section">
+          <h2>スクリーンショット</h2>
+          <p class="muted" style="margin: 0 0 12px">
+            操作感が分かるように主要画面をまとめました（タップで拡大表示できます）。
+          </p>
+
+          <div class="shotGrid" aria-label="Screenshots">
+            <a class="shotItem" href="./assets/screenshots/01.png" target="_blank" rel="noopener">
+              <img class="shotImg" src="./assets/screenshots/01.png" alt="ECサイトへワンタップで購入" loading="lazy" />
+              <div class="shotCap">探さない、すぐ買える（ECサイトへワンタップ）</div>
+            </a>
+
+            <a class="shotItem" href="./assets/screenshots/02.png" target="_blank" rel="noopener">
+              <img class="shotImg" src="./assets/screenshots/02.png" alt="商品を直感で追加" loading="lazy" />
+              <div class="shotCap">迷う前に、直感で追加</div>
+            </a>
+
+            <a class="shotItem" href="./assets/screenshots/03.png" target="_blank" rel="noopener">
+              <img class="shotImg" src="./assets/screenshots/03.png" alt="チラ見で在庫を色分け管理" loading="lazy" />
+              <div class="shotCap">チラ見して「あり / 少ない / なし」</div>
+            </a>
+
+            <a class="shotItem" href="./assets/screenshots/04.png" target="_blank" rel="noopener">
+              <img class="shotImg" src="./assets/screenshots/04.png" alt="家族で在庫を共有するグループ機能" loading="lazy" />
+              <div class="shotCap">在庫は家族で共有（グループ機能）</div>
+            </a>
+
+            <a class="shotItem" href="./assets/screenshots/05.png" target="_blank" rel="noopener">
+              <img class="shotImg" src="./assets/screenshots/05.png" alt="数字を使わない感覚的な在庫管理" loading="lazy" />
+              <div class="shotCap">数字を使わない、感覚でわかる在庫管理</div>
+            </a>
+          </div>
         </section>
 
         <section id="features" class="section">
@@ -445,4 +537,3 @@
     </div>
   </body>
 </html>
-
