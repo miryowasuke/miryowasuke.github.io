@@ -75,6 +75,7 @@
         --border: rgba(120, 86, 56, 0.18);
         --accent: #ff7a1a; /* orange */
         --accent2: #ffc86b; /* soft gold */
+        --brand: #d96a14; /* grounded orange - slightly brighter */
       }
       * {
         box-sizing: border-box;
@@ -128,7 +129,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 12px;
-        margin-bottom: 28px;
+        margin-bottom: 36px;
       }
       .brand {
         display: flex;
@@ -166,7 +167,12 @@
         grid-template-columns: 1fr;
         gap: 22px;
         align-items: start;
-        margin: 28px 0 22px;
+        margin: 40px 0 28px;
+      }
+      .hero > div {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
       }
       .recommend {
         margin-top: 18px;
@@ -176,10 +182,14 @@
         margin-right: 0;
       }
       .hero h1 {
-        margin: 0 0 10px;
+        margin: 0 0 24px;
         font-size: 44px;
-        line-height: 1.14;
+        line-height: 1.32;
         letter-spacing: -0.4px;
+      }
+      .hero h1 .brandName {
+        color: var(--brand);
+        font-weight: 700;
       }
       .hero p {
         margin: 0 0 18px;
@@ -459,7 +469,9 @@
       <main>
         <section class="hero">
           <div>
-            <h1>「まだあったっけ？」をなくす。家族で共有する在庫管理アプリ。</h1>
+            <h1>
+              <span class="brandName">チラストック</span>は、「まだあったっけ？」をなくす、<br />家族で共有する在庫管理アプリです。
+            </h1>
             <p>
               洗剤やトイレットペーパー、食品のストックなど、家の中って意外と「把握しづらい」もの。
               チラストックなら、3段階の色分けでサッと確認できて、家族や同居人とも共有できます。
@@ -469,7 +481,8 @@
               <a
                 class="btn btnPrimary"
                 href="https://apps.apple.com/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF/id6756490212"
-                >App Storeで見る</a>
+                >App Storeで見る</a
+              >
               <a class="btn" href="#screenshots">スクショを見る</a>
               <a class="btn" href="#features">機能を見る</a>
               <a class="btn" href="#faq">FAQ</a>
@@ -595,7 +608,8 @@
               class="shotItem"
               href="./assets/screenshots/01.png"
               target="_blank"
-              rel="noopener">
+              rel="noopener"
+            >
               <img
                 class="shotImg"
                 src="./assets/screenshots/01.png"
@@ -611,7 +625,8 @@
               class="shotItem"
               href="./assets/screenshots/02.png"
               target="_blank"
-              rel="noopener">
+              rel="noopener"
+            >
               <img
                 class="shotImg"
                 src="./assets/screenshots/02.png"
@@ -625,7 +640,8 @@
               class="shotItem"
               href="./assets/screenshots/03.png"
               target="_blank"
-              rel="noopener">
+              rel="noopener"
+            >
               <img
                 class="shotImg"
                 src="./assets/screenshots/03.png"
@@ -639,7 +655,8 @@
               class="shotItem"
               href="./assets/screenshots/04.png"
               target="_blank"
-              rel="noopener">
+              rel="noopener"
+            >
               <img
                 class="shotImg"
                 src="./assets/screenshots/04.png"
@@ -653,7 +670,8 @@
               class="shotItem"
               href="./assets/screenshots/05.png"
               target="_blank"
-              rel="noopener">
+              rel="noopener"
+            >
               <img
                 class="shotImg"
                 src="./assets/screenshots/05.png"
@@ -740,11 +758,13 @@
                 <div class="muted">
                   <a
                     href="https://miryowasuke.github.io/chirastock-privacy/privacy"
-                    >プライバシーポリシー</a>
+                    >プライバシーポリシー</a
+                  >
                   /
                   <a
                     href="https://miryowasuke.github.io/chirastock-privacy/terms-of-service"
-                    >利用規約</a>
+                    >利用規約</a
+                  >
                 </div>
               </div>
             </div>
@@ -761,8 +781,11 @@
               <a
                 class="btn btnPrimary"
                 href="https://apps.apple.com/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF/id6756490212"
-                >App Storeで見る</a>
-              <a class="btn" href="mailto:chirastock.miwa@gmail.com">問い合わせ</a>
+                >App Storeで見る</a
+              >
+              <a class="btn" href="mailto:chirastock.miwa@gmail.com"
+                >問い合わせ</a
+              >
             </div>
           </div>
         </section>
@@ -772,11 +795,16 @@
         <div>© 2026 チラストック</div>
         <div style="display: flex; gap: 14px; flex-wrap: wrap">
           <a href="https://miryowasuke.github.io/chirastock-privacy/privacy"
-            >プライバシーポリシー</a>
-          <a href="https://miryowasuke.github.io/chirastock-privacy/terms-of-service"
-            >利用規約</a>
-          <a href="https://apps.apple.com/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF/id6756490212"
-            >App Store</a>
+            >プライバシーポリシー</a
+          >
+          <a
+            href="https://miryowasuke.github.io/chirastock-privacy/terms-of-service"
+            >利用規約</a
+          >
+          <a
+            href="https://apps.apple.com/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF/id6756490212"
+            >App Store</a
+          >
         </div>
       </footer>
     </div>
