@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Chirastock is a simple inventory management app for households. Visualize stock levels of daily essentials and share with family. Reduce forgotten and duplicate purchases."
+    />
+    <meta name="robots" content="index,follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      property="og:title"
+      content="Chirastock | Family Inventory Management App"
+    />
+    <meta
+      property="og:description"
+      content="Visualize household stock and share with family. Reduce forgotten and duplicate purchases with a simple inventory app."
+    />
+    <meta property="og:url" content="https://miryowasuke.github.io/index-en.html" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Chirastock | Family Inventory Management App"
+    />
+    <meta
+      name="twitter:description"
+      content="Visualize household stock and share with family. Reduce forgotten and duplicate purchases with a simple inventory app."
+    />
+
+    <link rel="canonical" href="https://miryowasuke.github.io/index-en.html" />
+    <link rel="alternate" hreflang="ja" href="https://miryowasuke.github.io/" />
+    <link rel="alternate" hreflang="en" href="https://miryowasuke.github.io/index-en.html" />
+
+    <title>Chirastock | Family Inventory Management App</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Chirastock",
+        "alternateName": ["チラストック", "Chirastock Inventory"],
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "iOS",
+        "inLanguage": "en-US",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "url": "https://miryowasuke.github.io/index-en.html",
+        "downloadUrl": "https://apps.apple.com/app/id6756490212",
+        "publisher": { "@type": "Person", "name": "ryosuke miwa" },
+        "description": "Chirastock is a simple inventory management app for households. Visualize stock levels of daily essentials and share with family. Reduce forgotten and duplicate purchases.",
+        "featureList": [
+          "3-level color coding (in stock / low / out)",
+          "Share with family and housemates",
+          "Group by location or purpose",
+          "EC site links for quick reorder",
+          "Product photos and notes",
+          "Inventory history"
+        ],
+        "privacyPolicy": "https://miryowasuke.github.io/chirastock-privacy/privacy",
+        "termsOfService": "https://miryowasuke.github.io/chirastock-privacy/terms-of-service"
+      }
+    </script>
+
+    <style>
+      :root {
+        --bg: #fbf4e6;
+        --card: rgba(255, 255, 255, 0.72);
+        --surface: rgba(255, 255, 255, 0.58);
+        --surface2: rgba(255, 255, 255, 0.46);
+        --text: rgba(45, 32, 20, 0.92);
+        --muted: rgba(73, 54, 37, 0.72);
+        --border: rgba(120, 86, 56, 0.18);
+        --accent: #ff7a1a;
+        --accent2: #ffc86b;
+        --brand: #d96a14;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        background:
+          radial-gradient(1200px 800px at 20% 10%, rgba(255, 200, 107, 0.22), transparent),
+          radial-gradient(1100px 780px at 80% 0%, rgba(255, 122, 26, 0.1), transparent),
+          radial-gradient(900px 700px at 50% 110%, rgba(120, 86, 56, 0.08), transparent),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .wrap { max-width: 1060px; margin: 0 auto; padding: 56px 20px 72px; }
+      .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 36px; flex-wrap: wrap; }
+      .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.2px; }
+      .logo { width: 40px; height: 40px; border-radius: 12px; display: block; object-fit: cover; background: linear-gradient(135deg, rgba(255, 122, 26, 0.95), rgba(255, 183, 74, 0.95)); box-shadow: 0 16px 45px rgba(255, 122, 26, 0.16); }
+      .pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid var(--border); background: var(--surface); border-radius: 999px; color: var(--muted); font-size: 14px; }
+      .langLink { font-size: 14px; color: var(--muted); }
+      .langLink:hover { color: var(--text); }
+      .hero { display: grid; grid-template-columns: 1fr; gap: 22px; align-items: start; margin: 40px 0 28px; }
+      .hero > div { width: 100%; min-width: 0; box-sizing: border-box; }
+      .recommend { margin-top: 18px; width: 100%; max-width: none; }
+      .hero h1 { margin: 0 0 24px; font-size: 44px; line-height: 1.32; letter-spacing: -0.4px; }
+      .hero h1 .brandName { color: var(--brand); font-weight: 700; }
+      .hero p { margin: 0 0 18px; color: var(--muted); font-size: 17px; }
+      .ctaRow { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+      .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 16px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface); font-weight: 700; }
+      .btnPrimary { border: 0; color: rgba(255, 255, 255, 0.96); background: linear-gradient(135deg, rgba(255, 122, 26, 0.95), rgba(255, 183, 74, 0.95)); box-shadow: 0 18px 55px rgba(255, 122, 26, 0.22); }
+      .card { border: 1px solid var(--border); background: var(--card); border-radius: 18px; padding: 16px; }
+      .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+      .cards h3 { margin: 0 0 6px; font-size: 16px; }
+      .cards p { margin: 0; color: var(--muted); font-size: 14px; }
+      .panel { border: 1px solid var(--border); background: linear-gradient(135deg, rgba(255, 200, 107, 0.16), rgba(255, 255, 255, 0.52)); border-radius: 22px; padding: 18px; }
+      .panelHeader { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+      .panelHeader h2 { margin: 0; font-size: 22px; letter-spacing: -0.2px; }
+      .panelHeader p { margin: 0; color: var(--muted); font-size: 14px; }
+      .illusGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      .illusCard { border: 1px solid var(--border); background: var(--card); border-radius: 18px; padding: 14px; }
+      .illusImgWrap { border: 1px solid var(--border); background: rgba(255, 255, 255, 0.6); border-radius: 16px; padding: 10px; display: grid; place-items: center; }
+      .illusImg { width: 100%; height: auto; max-width: 260px; display: block; }
+      .illusTitle { margin: 12px 0 4px; font-weight: 800; letter-spacing: -0.1px; }
+      .illusText { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+      .section { margin-top: 34px; }
+      .section h2 { margin: 0 0 12px; font-size: 22px; letter-spacing: -0.2px; }
+      .list { display: grid; gap: 10px; }
+      .item { display: flex; gap: 12px; align-items: flex-start; padding: 14px; border-radius: 16px; border: 1px solid var(--border); background: var(--surface2); }
+      .badge { flex: none; width: 28px; height: 28px; border-radius: 10px; background: rgba(255, 122, 26, 0.14); border: 1px solid rgba(255, 122, 26, 0.28); display: grid; place-items: center; color: rgba(255, 183, 74, 0.98); font-weight: 800; }
+      .muted { color: var(--muted); }
+      .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      .footer { margin-top: 46px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; }
+      .shotGrid { display: flex; gap: 14px; overflow-x: auto; padding: 6px 2px 10px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+      .shotGrid::-webkit-scrollbar { height: 10px; }
+      .shotGrid::-webkit-scrollbar-thumb { background: rgba(120, 86, 56, 0.22); border-radius: 999px; border: 2px solid transparent; background-clip: padding-box; }
+      .shotItem { flex: 0 0 240px; scroll-snap-align: start; border: 1px solid var(--border); background: var(--surface2); border-radius: 18px; padding: 10px; text-decoration: none; }
+      .shotItem:hover { text-decoration: none; border-color: rgba(120, 86, 56, 0.28); }
+      .shotImg { width: 100%; height: auto; display: block; border-radius: 14px; }
+      .shotCap { margin: 10px 4px 2px; font-size: 13px; color: var(--muted); line-height: 1.45; }
+      @media (max-width: 920px) {
+        .cards, .illusGrid, .grid2 { grid-template-columns: 1fr; }
+        .hero h1 { font-size: 36px; }
+      }
+      @media (min-width: 920px) {
+        .shotGrid { display: grid; grid-template-columns: repeat(5, 1fr); overflow: visible; padding: 0; }
+        .shotItem { flex: initial; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="nav">
+        <div class="brand">
+          <img class="logo" src="./assets/screenshots/Icon_chirastock.png" alt="Chirastock" width="40" height="40" decoding="async" />
+          <div>
+            <div>Chirastock</div>
+            <div class="muted" style="font-size: 13px">Family inventory management app</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <a class="langLink" href="./index.html">日本語</a>
+          <div class="pill">
+            <span aria-hidden="true">●</span>
+            <span>Inventory / Stock / Shopping / Share</span>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div>
+            <h1>
+              <span class="brandName">Chirastock</span> eliminates "Do we still have it?" —<br />a family inventory management app.
+            </h1>
+            <p>
+              Detergent, toilet paper, food stock — household items are surprisingly hard to track. Chirastock lets you check at a glance with 3-level color coding and share with family. Fewer forgotten and duplicate purchases mean easier shopping.
+            </p>
+            <div class="ctaRow">
+              <a class="btn btnPrimary" href="https://apps.apple.com/app/id6756490212">View on App Store</a>
+              <a class="btn" href="#screenshots">Screenshots</a>
+              <a class="btn" href="#features">Features</a>
+              <a class="btn" href="#faq">FAQ</a>
+            </div>
+
+            <div class="cards" aria-label="Highlights">
+              <div class="card">
+                <h3>3-level intuitive management</h3>
+                <p>In stock / Low / Out — color-coded for quick scanning.</p>
+              </div>
+              <div class="card">
+                <h3>Share to stay in sync</h3>
+                <p>Fewer "Did you buy it?" and "Do we still have it?" conversations.</p>
+              </div>
+              <div class="card">
+                <h3>Smooth replenishment</h3>
+                <p>One-tap to purchase page when out of stock (URL registration).</p>
+              </div>
+            </div>
+
+            <aside class="card recommend">
+              <h2 style="margin: 0 0 8px; font-size: 18px">Recommended for</h2>
+              <div class="list" style="margin-top: 12px">
+                <div class="item">
+                  <div class="badge">1</div>
+                  <div>
+                    <div style="font-weight: 700">Sharing inventory with family</div>
+                    <div class="muted">See who bought or used up what, instantly.</div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="badge">2</div>
+                  <div>
+                    <div style="font-weight: 700">Reducing forgotten & duplicate purchases</div>
+                    <div class="muted">Quick stock check before shopping.</div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="badge">3</div>
+                  <div>
+                    <div style="font-weight: 700">Easier restocking of daily essentials</div>
+                    <div class="muted">Ideal for detergent, paper goods, shampoo, and more.</div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section" aria-label="How it works">
+          <div class="panel">
+            <div class="panelHeader">
+              <h2>How it works (3 steps)</h2>
+              <p>Check → Share → Reorder, smoothly.</p>
+            </div>
+            <div class="illusGrid" aria-label="Onboarding illustrations">
+              <div class="illusCard">
+                <div class="illusImgWrap">
+                  <img class="illusImg" src="./assets/screenshots/1_onboarding.png" alt="Check and update inventory" loading="lazy" decoding="async" />
+                </div>
+                <div class="illusTitle">Quick stock check</div>
+                <p class="illusText">Update household stock at a glance.</p>
+              </div>
+              <div class="illusCard">
+                <div class="illusImgWrap">
+                  <img class="illusImg" src="./assets/screenshots/2_onboarding.png" alt="Share inventory with family" loading="lazy" decoding="async" />
+                </div>
+                <div class="illusTitle">Share with family</div>
+                <p class="illusText">Fewer "Did you buy it?" exchanges.</p>
+              </div>
+              <div class="illusCard">
+                <div class="illusImgWrap">
+                  <img class="illusImg" src="./assets/screenshots/3_onboarding.png" alt="Purchase when out of stock" loading="lazy" decoding="async" />
+                </div>
+                <div class="illusTitle">Reorder in one tap</div>
+                <p class="illusText">Registered URLs take you straight to purchase.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="screenshots" class="section">
+          <h2>Screenshots</h2>
+          <p class="muted" style="margin: 0 0 12px">Main screens (tap to enlarge).</p>
+          <div class="shotGrid" aria-label="Screenshots">
+            <a class="shotItem" href="./assets/screenshots/01.png" target="_blank" rel="noopener">
+              <img class="shotImg" src="./assets/screenshots/01.png" alt="One-tap to purchase page" loading="lazy" />
+              <div class="shotCap">One-tap to buy (EC link)</div>
+            </a>
+            <a class="shotItem" href="./assets/screenshots/02.png" target="_blank" rel="noopener">
+              <img class="shotImg" src="./assets/screenshots/02.png" alt="Add items intuitively" loading="lazy" />
+              <div class="shotCap">Add items intuitively</div>
+            </a>
+            <a class="shotItem" href="./assets/screenshots/03.png" target="_blank" rel="noopener">
+              <img class="shotImg" src="./assets/screenshots/03.png" alt="Color-coded inventory" loading="lazy" />
+              <div class="shotCap">In stock / Low / Out at a glance</div>
+            </a>
+            <a class="shotItem" href="./assets/screenshots/04.png" target="_blank" rel="noopener">
+              <img class="shotImg" src="./assets/screenshots/04.png" alt="Family sharing" loading="lazy" />
+              <div class="shotCap">Share with family (groups)</div>
+            </a>
+            <a class="shotItem" href="./assets/screenshots/05.png" target="_blank" rel="noopener">
+              <img class="shotImg" src="./assets/screenshots/05.png" alt="Intuitive inventory" loading="lazy" />
+              <div class="shotCap">Intuitive, number-free management</div>
+            </a>
+          </div>
+        </section>
+
+        <section id="features" class="section">
+          <h2>Features</h2>
+          <div class="grid2">
+            <div class="item">
+              <div class="badge">✓</div>
+              <div>
+                <div style="font-weight: 700">3-level inventory</div>
+                <div class="muted">Switch states intuitively. Same rules for the whole family.</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="badge">✓</div>
+              <div>
+                <div style="font-weight: 700">Group management</div>
+                <div class="muted">Organize by location: kitchen, bathroom, living room.</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="badge">✓</div>
+              <div>
+                <div style="font-weight: 700">EC site links</div>
+                <div class="muted">Register URLs for one-tap reorder when out of stock.</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="badge">✓</div>
+              <div>
+                <div style="font-weight: 700">Photos & notes</div>
+                <div class="muted">Product photos and notes (size, model, etc.).</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" class="section">
+          <h2>FAQ</h2>
+          <div class="list">
+            <div class="item">
+              <div class="badge">Q</div>
+              <div>
+                <div style="font-weight: 700">Is it free?</div>
+                <div class="muted">Free to use. Optional in-app purchase (Premium plan) available.</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="badge">Q</div>
+              <div>
+                <div style="font-weight: 700">Where is data stored?</div>
+                <div class="muted">On Firebase (Google Cloud). Access is restricted to authenticated users.</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="badge">Q</div>
+              <div>
+                <div style="font-weight: 700">Privacy policy / Terms?</div>
+                <div class="muted">
+                  <a href="https://miryowasuke.github.io/chirastock-privacy/privacy">Privacy Policy</a> /
+                  <a href="https://miryowasuke.github.io/chirastock-privacy/terms-of-service">Terms of Service</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="card">
+            <h2 style="margin: 0 0 10px">Download</h2>
+            <p class="muted" style="margin: 0 0 14px">Available for iPhone/iPad. Android coming soon.</p>
+            <div class="ctaRow">
+              <a class="btn btnPrimary" href="https://apps.apple.com/app/id6756490212">View on App Store</a>
+              <a class="btn" href="mailto:chirastock.miwa@gmail.com">Contact</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>© 2026 Chirastock</div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap">
+          <a href="https://miryowasuke.github.io/chirastock-privacy/privacy">Privacy Policy</a>
+          <a href="https://miryowasuke.github.io/chirastock-privacy/terms-of-service">Terms of Service</a>
+          <a href="https://apps.apple.com/app/id6756490212">App Store</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
