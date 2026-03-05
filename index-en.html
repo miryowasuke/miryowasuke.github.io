@@ -92,11 +92,13 @@
       a { color: inherit; text-decoration: none; }
       a:hover { text-decoration: underline; }
       .wrap { max-width: 1060px; margin: 0 auto; padding: 56px 20px 72px; }
-      .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 36px; flex-wrap: wrap; }
-      .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.2px; }
+      .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 36px; }
+      .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.2px; min-width: 0; }
+      .brandTitle { white-space: nowrap; }
+      .navUtils { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
       .logo { width: 40px; height: 40px; border-radius: 12px; display: block; object-fit: cover; background: linear-gradient(135deg, rgba(255, 122, 26, 0.95), rgba(255, 183, 74, 0.95)); box-shadow: 0 16px 45px rgba(255, 122, 26, 0.16); }
       .pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid var(--border); background: var(--surface); border-radius: 999px; color: var(--muted); font-size: 14px; }
-      .langLink { font-size: 14px; color: var(--muted); }
+      .langLink { font-size: 14px; color: var(--muted); flex-shrink: 0; }
       .langLink:hover { color: var(--text); }
       .hero { display: grid; grid-template-columns: 1fr; gap: 22px; align-items: start; margin: 40px 0 28px; }
       .hero > div { width: 100%; min-width: 0; box-sizing: border-box; }
@@ -104,8 +106,9 @@
       .hero h1 { margin: 0 0 24px; font-size: 44px; line-height: 1.32; letter-spacing: -0.4px; }
       .hero h1 .brandName { color: var(--brand); font-weight: 700; }
       .hero p { margin: 0 0 18px; color: var(--muted); font-size: 17px; }
-      .ctaRow { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
-      .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 16px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface); font-weight: 700; }
+      .ctaRow { display: flex; align-items: stretch; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+      .ctaRow .btn { height: 48px; min-height: 48px; flex-shrink: 0; padding: 0 16px; }
+      .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface); font-weight: 700; }
       .btnPrimary { border: 0; color: rgba(255, 255, 255, 0.96); background: linear-gradient(135deg, rgba(255, 122, 26, 0.95), rgba(255, 183, 74, 0.95)); box-shadow: 0 18px 55px rgba(255, 122, 26, 0.22); }
       .card { border: 1px solid var(--border); background: var(--card); border-radius: 18px; padding: 16px; }
       .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
@@ -137,6 +140,10 @@
       .shotImg { width: 100%; height: auto; display: block; border-radius: 14px; }
       .shotCap { margin: 10px 4px 2px; font-size: 13px; color: var(--muted); line-height: 1.45; }
       @media (max-width: 920px) {
+        .wrap { padding: 40px 20px 56px; }
+        .nav { flex-direction: column; align-items: stretch; gap: 16px; margin-bottom: 28px; }
+        .brand { flex-shrink: 0; }
+        .navUtils { justify-content: flex-start; align-items: center; }
         .cards, .illusGrid, .grid2 { grid-template-columns: 1fr; }
         .hero h1 { font-size: 36px; }
       }
@@ -152,11 +159,11 @@
         <div class="brand">
           <img class="logo" src="./assets/screenshots/Icon_chirastock.png" alt="Chirastock" width="40" height="40" decoding="async" />
           <div>
-            <div>Chirastock</div>
+            <div class="brandTitle">Chirastock</div>
             <div class="muted" style="font-size: 13px">Family inventory management app</div>
           </div>
         </div>
-        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+        <div class="navUtils">
           <a class="langLink" href="./index.html">日本語</a>
           <div class="pill">
             <span aria-hidden="true">●</span>

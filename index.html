@@ -139,6 +139,16 @@
         gap: 12px;
         font-weight: 700;
         letter-spacing: 0.2px;
+        min-width: 0;
+      }
+      .brandTitle {
+        white-space: nowrap;
+      }
+      .navUtils {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
       }
       .logo {
         width: 40px;
@@ -163,6 +173,14 @@
         border-radius: 999px;
         color: var(--muted);
         font-size: 14px;
+      }
+      .langLink {
+        font-size: 14px;
+        color: var(--muted);
+        flex-shrink: 0;
+      }
+      .langLink:hover {
+        color: var(--text);
       }
       .hero {
         display: grid;
@@ -200,20 +218,32 @@
       }
       .ctaRow {
         display: flex;
+        align-items: stretch;
         gap: 12px;
         flex-wrap: wrap;
         margin-top: 10px;
+      }
+      .ctaRow .btn,
+      .ctaRow .appStoreBadgeLink {
+        height: 48px;
+        min-height: 48px;
+        flex-shrink: 0;
       }
       .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 10px;
-        padding: 12px 16px;
+        padding: 0 16px;
         border-radius: 14px;
         border: 1px solid var(--border);
         background: var(--surface);
         font-weight: 700;
+      }
+      .appStoreBadgeLink {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
       }
       .btnPrimary {
         border: 0;
@@ -224,6 +254,11 @@
           rgba(255, 183, 74, 0.95)
         );
         box-shadow: 0 18px 55px rgba(255, 122, 26, 0.22);
+      }
+      .appStoreBadge {
+        display: block;
+        height: 48px;
+        width: auto;
       }
       .card {
         border: 1px solid var(--border);
@@ -408,6 +443,22 @@
       }
 
       @media (max-width: 920px) {
+        .wrap {
+          padding: 40px 20px 56px;
+        }
+        .nav {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 16px;
+          margin-bottom: 28px;
+        }
+        .brand {
+          flex-shrink: 0;
+        }
+        .navUtils {
+          justify-content: flex-start;
+          align-items: center;
+        }
         .hero {
           grid-template-columns: 1fr;
         }
@@ -456,14 +507,14 @@
             decoding="async"
           />
           <div>
-            <div>チラストック</div>
+            <div class="brandTitle">チラストック</div>
             <div class="muted" style="font-size: 13px">
               家族で共有する在庫管理アプリ
             </div>
           </div>
         </div>
-        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-          <a href="./index-en.html" style="font-size: 14px; color: var(--muted);">English</a>
+        <div class="navUtils">
+          <a class="langLink" href="./index-en.html">English</a>
           <div class="pill">
             <span aria-hidden="true">●</span>
             <span>在庫管理 / ストック管理 / 買い物 / 共有</span>
@@ -484,10 +535,21 @@
             </p>
             <div class="ctaRow">
               <a
-                class="btn btnPrimary"
+                class="appStoreBadgeLink"
                 href="https://apps.apple.com/jp/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF-%E5%AE%B6%E6%97%8F%E3%81%A7%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E5%9C%A8%E5%BA%AB%E7%AE%A1%E7%90%86%E3%82%A2%E3%83%97%E3%83%AA/id6756490212"
-                >App Storeで見る</a
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="App Storeからダウンロード"
               >
+                <img
+                  class="appStoreBadge"
+                  src="./assets/app-store-badge-ja.svg"
+                  alt="App Storeからダウンロード"
+                  width="131"
+                  height="48"
+                  loading="eager"
+                />
+              </a>
               <a class="btn" href="#screenshots">スクショを見る</a>
               <a class="btn" href="#features">機能を見る</a>
               <a class="btn" href="#faq">FAQ</a>
@@ -782,10 +844,21 @@
             </p>
             <div class="ctaRow">
               <a
-                class="btn btnPrimary"
+                class="appStoreBadgeLink"
                 href="https://apps.apple.com/jp/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF-%E5%AE%B6%E6%97%8F%E3%81%A7%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E5%9C%A8%E5%BA%AB%E7%AE%A1%E7%90%86%E3%82%A2%E3%83%97%E3%83%AA/id6756490212"
-                >App Storeで見る</a
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="App Storeからダウンロード"
               >
+                <img
+                  class="appStoreBadge"
+                  src="./assets/app-store-badge-ja.svg"
+                  alt="App Storeからダウンロード"
+                  width="131"
+                  height="48"
+                  loading="lazy"
+                />
+              </a>
               <a class="btn" href="mailto:chirastock.miwa@gmail.com"
                 >問い合わせ</a
               >
