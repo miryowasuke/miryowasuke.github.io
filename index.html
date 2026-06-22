@@ -49,7 +49,7 @@
         "name": "チラストック",
         "alternateName": ["Chirastock", "チラストック 在庫管理"],
         "applicationCategory": "LifestyleApplication",
-        "operatingSystem": "iOS",
+        "operatingSystem": "iOS, Android",
         "inLanguage": "ja-JP",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
         "url": "https://miryowasuke.github.io/",
@@ -222,15 +222,20 @@
       }
       .ctaRow {
         display: flex;
-        align-items: stretch;
+        align-items: center;
         gap: 12px;
         flex-wrap: wrap;
         margin-top: 10px;
       }
-      .ctaRow .btn,
-      .ctaRow .appStoreBadgeLink {
+      .ctaRow .btn {
         height: 48px;
         min-height: 48px;
+        flex-shrink: 0;
+      }
+      .ctaRow .storeBadgeLink {
+        height: 48px;
+        min-height: 48px;
+        max-height: 48px;
         flex-shrink: 0;
       }
       .btn {
@@ -244,7 +249,7 @@
         background: var(--surface);
         font-weight: 700;
       }
-      .appStoreBadgeLink {
+      .storeBadgeLink {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -259,10 +264,12 @@
         );
         box-shadow: 0 18px 55px rgba(255, 122, 26, 0.22);
       }
-      .appStoreBadge {
+      .storeBadge {
         display: block;
         height: 48px;
         width: auto;
+        max-height: 48px;
+        object-fit: contain;
       }
       .card {
         border: 1px solid var(--border);
@@ -540,17 +547,33 @@
             </p>
             <div class="ctaRow">
               <a
-                class="appStoreBadgeLink"
+                class="storeBadgeLink"
                 href="https://apps.apple.com/jp/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF-%E5%AE%B6%E6%97%8F%E3%81%A7%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E5%9C%A8%E5%BA%AB%E7%AE%A1%E7%90%86%E3%82%A2%E3%83%97%E3%83%AA/id6756490212"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="App Storeからダウンロード"
               >
                 <img
-                  class="appStoreBadge"
+                  class="storeBadge"
                   src="./assets/app-store-badge-ja.svg"
                   alt="App Storeからダウンロード"
                   width="131"
+                  height="48"
+                  loading="eager"
+                />
+              </a>
+              <a
+                class="storeBadgeLink"
+                href="https://play.google.com/store/apps/details?id=com.chirastock.mobile"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Google Playからダウンロード"
+              >
+                <img
+                  class="storeBadge"
+                  src="./assets/google-play-badge-ja.png"
+                  alt="Google Play で手に入れよう"
+                  width="162"
                   height="48"
                   loading="eager"
                 />
@@ -849,21 +872,37 @@
           <div class="card">
             <h2 style="margin: 0 0 10px">ダウンロード</h2>
             <p class="muted" style="margin: 0 0 14px">
-              iPhone/iPad向けに公開中です。Androidは準備中です。
+              iPhone/iPad・Android向けに公開中です。
             </p>
             <div class="ctaRow">
               <a
-                class="appStoreBadgeLink"
+                class="storeBadgeLink"
                 href="https://apps.apple.com/jp/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF-%E5%AE%B6%E6%97%8F%E3%81%A7%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E5%9C%A8%E5%BA%AB%E7%AE%A1%E7%90%86%E3%82%A2%E3%83%97%E3%83%AA/id6756490212"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="App Storeからダウンロード"
               >
                 <img
-                  class="appStoreBadge"
+                  class="storeBadge"
                   src="./assets/app-store-badge-ja.svg"
                   alt="App Storeからダウンロード"
                   width="131"
+                  height="48"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                class="storeBadgeLink"
+                href="https://play.google.com/store/apps/details?id=com.chirastock.mobile"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Google Playからダウンロード"
+              >
+                <img
+                  class="storeBadge"
+                  src="./assets/google-play-badge-ja.png"
+                  alt="Google Play で手に入れよう"
+                  width="162"
                   height="48"
                   loading="lazy"
                 />
@@ -889,6 +928,10 @@
           <a
             href="https://apps.apple.com/jp/app/%E3%83%81%E3%83%A9%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF-%E5%AE%B6%E6%97%8F%E3%81%A7%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E5%9C%A8%E5%BA%AB%E7%AE%A1%E7%90%86%E3%82%A2%E3%83%97%E3%83%AA/id6756490212"
             >App Store</a
+          >
+          <a
+            href="https://play.google.com/store/apps/details?id=com.chirastock.mobile"
+            >Google Play</a
           >
         </div>
       </footer>

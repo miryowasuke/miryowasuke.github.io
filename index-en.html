@@ -44,7 +44,7 @@
         "name": "Chirastock",
         "alternateName": ["チラストック", "Chirastock Inventory"],
         "applicationCategory": "LifestyleApplication",
-        "operatingSystem": "iOS",
+        "operatingSystem": "iOS, Android",
         "inLanguage": "en-US",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "url": "https://miryowasuke.github.io/index-en.html",
@@ -106,8 +106,11 @@
       .hero h1 { margin: 0 0 24px; font-size: 44px; line-height: 1.32; letter-spacing: -0.4px; }
       .hero h1 .brandName { color: var(--brand); font-weight: 700; }
       .hero p { margin: 0 0 18px; color: var(--muted); font-size: 17px; }
-      .ctaRow { display: flex; align-items: stretch; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+      .ctaRow { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
       .ctaRow .btn { height: 48px; min-height: 48px; flex-shrink: 0; padding: 0 16px; }
+      .ctaRow .storeBadgeLink { height: 48px; min-height: 48px; max-height: 48px; flex-shrink: 0; }
+      .storeBadgeLink { display: inline-flex; align-items: center; justify-content: center; }
+      .storeBadge { display: block; height: 48px; width: auto; max-height: 48px; object-fit: contain; }
       .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface); font-weight: 700; }
       .btnPrimary { border: 0; color: rgba(255, 255, 255, 0.96); background: linear-gradient(135deg, rgba(255, 122, 26, 0.95), rgba(255, 183, 74, 0.95)); box-shadow: 0 18px 55px rgba(255, 122, 26, 0.22); }
       .card { border: 1px solid var(--border); background: var(--card); border-radius: 18px; padding: 16px; }
@@ -182,7 +185,38 @@
               Detergent, toilet paper, food stock — household items are surprisingly hard to track. Chirastock lets you check at a glance with 3-level color coding and share with family. Fewer forgotten and duplicate purchases mean easier shopping.
             </p>
             <div class="ctaRow">
-              <a class="btn btnPrimary" href="https://apps.apple.com/app/id6756490212">View on App Store</a>
+              <a
+                class="storeBadgeLink"
+                href="https://apps.apple.com/app/id6756490212"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download on the App Store"
+              >
+                <img
+                  class="storeBadge"
+                  src="./assets/app-store-badge-en.svg"
+                  alt="Download on the App Store"
+                  width="144"
+                  height="48"
+                  loading="eager"
+                />
+              </a>
+              <a
+                class="storeBadgeLink"
+                href="https://play.google.com/store/apps/details?id=com.chirastock.mobile"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get it on Google Play"
+              >
+                <img
+                  class="storeBadge"
+                  src="./assets/google-play-badge-en.png"
+                  alt="Get it on Google Play"
+                  width="161"
+                  height="48"
+                  loading="eager"
+                />
+              </a>
               <a class="btn" href="#screenshots">Screenshots</a>
               <a class="btn" href="#features">Features</a>
               <a class="btn" href="#faq">FAQ</a>
@@ -358,9 +392,40 @@
         <section class="section">
           <div class="card">
             <h2 style="margin: 0 0 10px">Download</h2>
-            <p class="muted" style="margin: 0 0 14px">Available for iPhone/iPad. Android coming soon.</p>
+            <p class="muted" style="margin: 0 0 14px">Available for iPhone/iPad and Android.</p>
             <div class="ctaRow">
-              <a class="btn btnPrimary" href="https://apps.apple.com/app/id6756490212">View on App Store</a>
+              <a
+                class="storeBadgeLink"
+                href="https://apps.apple.com/app/id6756490212"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download on the App Store"
+              >
+                <img
+                  class="storeBadge"
+                  src="./assets/app-store-badge-en.svg"
+                  alt="Download on the App Store"
+                  width="144"
+                  height="48"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                class="storeBadgeLink"
+                href="https://play.google.com/store/apps/details?id=com.chirastock.mobile"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get it on Google Play"
+              >
+                <img
+                  class="storeBadge"
+                  src="./assets/google-play-badge-en.png"
+                  alt="Get it on Google Play"
+                  width="161"
+                  height="48"
+                  loading="lazy"
+                />
+              </a>
               <a class="btn" href="mailto:chirastock.miwa@gmail.com">Contact</a>
             </div>
           </div>
@@ -373,6 +438,7 @@
           <a href="https://miryowasuke.github.io/chirastock-privacy/privacy">Privacy Policy</a>
           <a href="https://miryowasuke.github.io/chirastock-privacy/terms-of-service">Terms of Service</a>
           <a href="https://apps.apple.com/app/id6756490212">App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=com.chirastock.mobile">Google Play</a>
         </div>
       </footer>
     </div>
